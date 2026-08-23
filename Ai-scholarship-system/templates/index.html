@@ -1,0 +1,550 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<style>
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+}
+
+.glass-card{
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:50px;
+    border:1px solid rgba(255,255,255,0.20);
+    box-shadow:0 10px 30px rgba(0,0,0,.30);
+}
+
+#typing{
+    color:white;
+    font-size:55px;
+    font-weight:bold;
+    line-height:1.3;
+    border-right:4px solid cyan;
+    padding-right:5px;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+border-color:transparent;
+}
+}
+
+.subtitle{
+    color:#dbeafe;
+    font-size:20px;
+    margin-top:25px;
+}
+
+.custom-btn{
+    padding:14px 35px;
+    border-radius:40px;
+    font-size:18px;
+    font-weight:bold;
+    margin-top:20px;
+    margin-right:15px;
+    transition:.4s;
+}
+
+.custom-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 25px cyan;
+}
+
+.robot{
+    width:100%;
+    max-width:470px;
+    animation:float 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 30px cyan);
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.section-title{
+    color:white;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.feature-card{
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    color:white;
+    transition:.4s;
+    height:100%;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px cyan;
+}
+
+.counter{
+    font-size:45px;
+    font-weight:bold;
+    color:#00E5FF;
+}
+
+</style>
+
+<div class="container hero">
+
+<div class="glass-card">
+
+<div class="row align-items-center" data-aos="fade-up">
+
+<div class="col-lg-6">
+
+<h1>
+<span id="typing"></span>
+</h1>
+
+<p class="subtitle">
+
+Our AI analyzes your CGPA,
+Family Income,
+Department,
+and Community
+to recommend the best scholarship
+within seconds.
+
+</p>
+
+<a href="/register" class="btn btn-success custom-btn">
+
+Get Started
+
+</a>
+
+<a href="/login" class="btn btn-primary custom-btn">
+
+Login
+
+</a>
+
+</div>
+
+<div class="col-lg-6 text-center">
+
+<img src="{{ url_for('static', filename='images/robot.png') }}"
+class="robot">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<h2 class="section-title text-center">
+
+Why Choose Our AI?
+
+</h2>
+
+<br>
+
+<div class="row g-4" data-aos="zoom-in">
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h1>🤖</h1>
+
+<h4>AI Powered</h4>
+
+<p>
+
+Machine Learning based scholarship prediction.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h1>⚡</h1>
+
+<h4>Fast Recommendation</h4>
+
+<p>
+
+Get scholarship suggestions instantly.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h1>🎯</h1>
+
+<h4>High Accuracy</h4>
+
+<p>
+
+Smart prediction using student profile.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+<br><br><br>
+
+<h2 class="section-title text-center">
+
+Project Statistics
+
+</h2>
+
+<br>
+
+<div class="row text-center" data-aos="fade-right">
+
+<div class="col-md-4">
+
+<div class="counter">
+
+1000+
+
+</div>
+
+<h4 class="text-white">
+
+Students
+
+</h4>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="counter">
+
+500+
+
+</div>
+
+<h4 class="text-white">
+
+Scholarships
+
+</h4>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="counter">
+
+95%
+
+</div>
+
+<h4 class="text-white">
+
+Accuracy
+
+</h4>
+
+</div>
+
+</div>
+
+<br><br><br>
+
+<h2 class="section-title text-center">
+
+How It Works
+
+</h2>
+
+<br>
+
+<div class="row g-4" data-aos="fade-left">
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<h2>1️⃣</h2>
+
+<h5>Register</h5>
+
+<p>Create your student account.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<h2>2️⃣</h2>
+
+<h5>Login</h5>
+
+<p>Login securely to your account.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<h2>3️⃣</h2>
+
+<h5>Enter Details</h5>
+
+<p>Provide CGPA, Income and other details.</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="feature-card">
+
+<h2>4️⃣</h2>
+
+<h5>Get Recommendation</h5>
+
+<p>AI recommends the best scholarship.</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<script>
+
+const counters=document.querySelectorAll('.counter');
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target=parseInt(counter.innerText.replace(/\D/g,''));
+
+let count=parseFloat(counter.dataset.count||0);
+
+const increment=target/100;
+
+if(count<target){
+
+count+=increment;
+
+counter.dataset.count=count;
+
+if(counter.innerText.includes('%')){
+
+counter.innerText=Math.ceil(count)+"%";
+
+}else{
+
+counter.innerText=Math.ceil(count)+"+";
+
+}
+
+setTimeout(updateCounter,20);
+
+}else{
+
+if(counter.innerText.includes('%')){
+
+counter.innerText=target+"%";
+
+}else{
+
+counter.innerText=target+"+";
+
+}
+
+}
+
+};
+
+updateCounter();
+
+});
+
+</script>
+
+<script>
+
+const text="Find Your Perfect Scholarship Using AI 🤖";
+
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("typing").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,70);
+
+}
+
+}
+
+typing();
+
+</script>
+<br><br><br>
+
+<div class="text-center">
+
+<h2 class="section-title">
+
+Ready to Find Your Scholarship?
+
+</h2>
+
+<p class="subtitle">
+
+Register today and let Artificial Intelligence help you discover the best scholarship opportunities.
+
+</p>
+
+<br>
+
+<a href="/register" class="btn btn-success custom-btn">
+
+🚀 Get Started Now
+
+</a>
+
+</div>
+
+<br><br><br>
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h2>🔒</h2>
+
+<h4>Secure</h4>
+
+<p>
+
+Your personal information is protected with secure authentication.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h2>⚙️</h2>
+
+<h4>Easy to Use</h4>
+
+<p>
+
+Simple and user-friendly interface for every student.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="feature-card">
+
+<h2>🌍</h2>
+
+<h4>Accessible</h4>
+
+<p>
+
+Access the scholarship recommendation system anytime and anywhere.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<br><br>
+
+<footer class="text-center text-white">
+
+<hr>
+
+<p>
+
+🤖 AI Scholarship Recommendation System
+
+<br><br>
+
+Made with ❤️ using Python • Flask • Machine Learning • SQLite
+
+<br><br>
+
+© 2026 All Rights Reserved
+
+</p>
+
+</footer>
+
+{% endblock %}

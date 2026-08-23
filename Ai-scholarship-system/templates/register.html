@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5" style="max-width:700px;">
+
+    <h2 class="text-center mb-4">Student Registration</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label>Full Name</label>
+<input type="text" name="fullname" class="form-control" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Create password" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Department</label>
+           <input type="text" name="department" class="form-control" placeholder="Example: CSBS" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Year</label>
+           <select name="year" class="form-control">
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>CGPA</label>
+            <input type="number" step="0.01" name="cgpa" class="form-control" placeholder="Example: 8.5" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Family Annual Income</label>
+            <input type="number" name="income" class="form-control" placeholder="Example: 150000" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Community</label>
+            <select name="community" class="form-control">
+                <option>OC</option>
+                <option>BC</option>
+                <option>MBC</option>
+                <option>SC</option>
+                <option>ST</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">
+            Register
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

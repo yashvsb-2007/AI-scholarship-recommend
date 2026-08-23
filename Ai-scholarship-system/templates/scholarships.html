@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Scholarships{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2 class="text-center text-primary">
+        🎓 Available Scholarships
+    </h2>
+
+    <hr>
+
+    <table class="table table-bordered table-hover">
+
+        <thead class="table-dark">
+            <tr>
+                <th>Scholarship</th>
+                <th>Minimum CGPA</th>
+                <th>Maximum Income</th>
+                <th>Community</th>
+                <th>Department</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Government Merit Scholarship</td>
+                <td>8.5</td>
+                <td>250000</td>
+                <td>BC</td>
+                <td>CSBS</td>
+                <td>₹50,000</td>
+            </tr>
+
+            <tr>
+                <td>State Scholarship</td>
+                <td>7.5</td>
+                <td>500000</td>
+                <td>MBC</td>
+                <td>CSE</td>
+                <td>₹30,000</td>
+            </tr>
+
+            <tr>
+                <td>Private Scholarship</td>
+                <td>6.5</td>
+                <td>1000000</td>
+                <td>Any</td>
+                <td>Any</td>
+                <td>₹20,000</td>
+            </tr>
+
+            <tr>
+                <td>Merit Cum Means Scholarship</td>
+                <td>9.0</td>
+                <td>200000</td>
+                <td>SC</td>
+                <td>Any</td>
+                <td>₹60,000</td>
+            </tr>
+
+            <tr>
+                <td>Women in STEM Scholarship</td>
+                <td>8.0</td>
+                <td>600000</td>
+                <td>Any</td>
+                <td>CSBS</td>
+                <td>₹35,000</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

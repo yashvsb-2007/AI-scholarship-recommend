@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ================= Background Animation ================= -->
+
+<div class="bg-animation">
+
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+
+</div>
+
+<!-- ================= Navbar ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+
+<div class="container">
+
+<a class="navbar-brand d-flex align-items-center fw-bold text-info" href="/">
+    
+    <img src="{{ url_for('static', filename='images/logo.png') }}"
+         alt="AI Scholarship Logo"
+         width="45"
+         height="45"
+         class="me-2 rounded-circle">
+
+    AI Scholarship
+
+</a>
+
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#navbarNav">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="/">
+
+Home
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="/about">
+
+About
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="/scholarships">
+
+Scholarships
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-white" href="/login">
+
+Login
+
+</a>
+
+</li>
+
+<li class="nav-item">
+
+<a class="nav-link text-warning" href="/register">
+
+Register
+
+</a>
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ================= Page Content ================= -->
+
+<div class="container">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+
+<!-- ================= Floating AI Button ================= -->
+
+<a href="/login"
+style="
+position:fixed;
+right:30px;
+bottom:30px;
+width:70px;
+height:70px;
+border-radius:50%;
+background:cyan;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
+text-decoration:none;
+box-shadow:0 0 25px cyan;
+z-index:999;">
+
+🤖
+
+</a>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+
+duration:1000,
+once:true
+
+});
+
+</script>
+<!-- ================= Footer ================= -->
+
+<footer class="text-center text-white mt-5 p-4" style="background:rgba(255,255,255,0.08);">
+
+    <h4>🎓 AI Scholarship Recommendation System</h4>
+
+    <p>
+        Empowering Students with Artificial Intelligence
+    </p>
+
+    <hr class="bg-light">
+
+    <p>
+        © 2026 AI Scholarship System | Developed by Jayapriya R
+    </p>
+
+</footer>
+<script>
+
+window.onload=function(){
+
+setTimeout(function(){
+
+document.getElementById("loader").style.display="none";
+
+},2500);
+
+}
+
+</script>
+
+</body>
+<!-- ================= Loading Screen ================= -->
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <img src="{{ url_for('static', filename='images/robot.png') }}" width="120">
+
+        <h2>AI Scholarship System</h2>
+
+        <div class="loading-bar">
+
+            <div class="loading-fill"></div>
+
+        </div>
+
+        <p>Loading...</p>
+
+    </div>
+
+</div>
+
+</html>

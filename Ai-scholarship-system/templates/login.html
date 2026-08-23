@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5" style="max-width:500px;">
+
+    <h2 class="text-center mb-4">Student Login</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email"
+                   name="email"
+                   class="form-control"
+                   placeholder="Enter your email"
+                   required>
+        </div>
+
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="Enter your password"
+                   required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">
+            Login
+        </button>
+        <div class="text-center mt-3">
+
+    <a href="/forgot_password" class="text-decoration-none">
+
+        🔑 Forgot Password?
+
+    </a>
+
+</div>
+        <div class="text-center mt-3">
+
+<a href="/forgot_password">
+
+Forgot Password?
+
+</a>
+
+</div>
+
+    </form>
+
+</div>
+
+{% endblock %}

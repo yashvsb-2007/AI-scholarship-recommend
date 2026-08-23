@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg border-0 rounded-4">
+
+        <div class="card-body p-5 text-center">
+
+            <h1 class="text-primary">
+                🎓 Welcome, {{ name }}
+            </h1>
+
+            <p class="lead mt-3">
+                Welcome to the AI Scholarship Recommendation System.
+                <br>
+                Use Artificial Intelligence to discover scholarships that match your profile.
+            </p>
+
+            <hr>
+
+            <div class="row mt-4 g-4">
+
+                <!-- AI Recommendation -->
+
+                <div class="col-md-4">
+
+                    <div class="card p-4 shadow h-100">
+
+                        <h2>🤖</h2>
+
+                        <h5>AI Recommendation</h5>
+
+                        <a href="/recommendation" class="btn btn-primary mt-3">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Scholarships -->
+
+                <div class="col-md-4">
+
+                    <div class="card p-4 shadow h-100">
+
+                        <h2>🎓</h2>
+
+                        <h5>Scholarships</h5>
+
+                        <a href="/scholarships" class="btn btn-success mt-3">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Profile -->
+
+                <div class="col-md-4">
+
+                    <div class="card p-4 shadow h-100">
+
+                        <h2>👤</h2>
+
+                        <h5>Profile</h5>
+
+                        <a href="/profile" class="btn btn-warning mt-3">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- Change Password -->
+
+                <div class="col-md-4">
+
+                    <div class="card p-4 shadow h-100">
+
+                        <h2>🔒</h2>
+
+                        <h5>Change Password</h5>
+
+                        <a href="/change_password" class="btn btn-danger mt-3">
+                            Open
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- AI Chatbot -->
+
+                <div class="col-md-4">
+
+                    <div class="card p-4 shadow h-100">
+
+                        <h2>💬</h2>
+
+                        <h5>AI Chatbot</h5>
+
+                        <a href="/chatbot" class="btn btn-info mt-3">
+                            Chat Now
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- About -->
+
+                <div class="col-md-4">
+
+                    <div class="card p-4 shadow h-100">
+
+                        <h2>ℹ️</h2>
+
+                        <h5>About Project</h5>
+
+                        <a href="/about" class="btn btn-secondary mt-3">
+                            View
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<hr class="my-5">
+
+<h2 class="text-center text-white">
+    📊 Scholarship Analytics
+</h2>
+
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <canvas id="myChart"></canvas>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+
+    type: 'bar',
+
+    data: {
+
+        labels: [
+            'Eligible',
+            'Not Eligible',
+            'Applied',
+            'Approved'
+        ],
+
+        datasets: [{
+
+            label: 'Students',
+
+            data: [80, 20, 40, 30],
+
+            backgroundColor: [
+                '#0d6efd',
+                '#dc3545',
+                '#198754',
+                '#ffc107'
+            ]
+
+        }]
+
+    },
+
+    options: {
+
+        responsive: true,
+
+        scales: {
+
+            y: {
+
+                beginAtZero: true
+
+            }
+
+        }
+
+    }
+
+});
+
+</script>
+
+{% endblock %}

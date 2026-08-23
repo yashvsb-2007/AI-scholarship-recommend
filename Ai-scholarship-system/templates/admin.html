@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h2 class="text-center text-white mb-4">
+
+👨‍💼 Admin Panel
+
+</h2>
+<input
+type="text"
+id="searchInput"
+class="form-control mb-3"
+placeholder="🔍 Search Student...">
+<div class="card shadow-lg">
+
+<div class="card-body">
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-primary">
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Department</th>
+<th>CGPA</th>
+<th>Income</th>
+<th>Community</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for student in students %}
+
+<tr>
+
+<td>{{ student[0] }}</td>
+<td>{{ student[1] }}</td>
+<td>{{ student[2] }}</td>
+<td>{{ student[4] }}</td>
+<td>{{ student[6] }}</td>
+<td>{{ student[7] }}</td>
+<td>{{ student[8] }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+<script>
+
+document.getElementById("searchInput").addEventListener("keyup",function(){
+
+let filter=this.value.toUpperCase();
+
+let rows=document.querySelectorAll("tbody tr");
+
+rows.forEach(row=>{
+
+let txt=row.innerText.toUpperCase();
+
+row.style.display=txt.includes(filter)?"":"none";
+
+});
+
+});
+
+</script>
+
+{% endblock %}

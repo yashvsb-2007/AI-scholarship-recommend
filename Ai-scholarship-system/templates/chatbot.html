@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}AI Chatbot{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<div class="card shadow-lg">
+
+<div class="card-header bg-primary text-white">
+
+🤖 AI Assistant
+
+</div>
+
+<div class="card-body" id="chatbox" style="height:400px;overflow-y:auto;">
+
+<div class="alert alert-primary">
+
+Hello 👋<br>
+
+I'm your AI Scholarship Assistant.<br>
+
+Ask me about scholarships.
+
+</div>
+
+</div>
+
+<div class="card-footer">
+
+<div class="input-group">
+
+<input
+type="text"
+id="message"
+class="form-control"
+placeholder="Type your question...">
+
+<button
+class="btn btn-success"
+onclick="sendMessage()">
+
+Send
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function sendMessage(){
+
+let input=document.getElementById("message");
+
+let msg=input.value;
+
+if(msg=="") return;
+
+let chat=document.getElementById("chatbox");
+
+chat.innerHTML+=`
+<div class="alert alert-secondary text-end">
+${msg}
+</div>`;
+
+let reply="Please check the Scholarship section or AI Recommendation page.";
+
+if(msg.toLowerCase().includes("hello"))
+reply="Hello! Welcome to AI Scholarship Recommendation System.";
+
+if(msg.toLowerCase().includes("scholarship"))
+reply="Go to the Scholarship page to view available scholarships.";
+
+if(msg.toLowerCase().includes("recommend"))
+reply="Use the AI Recommendation page to find suitable scholarships.";
+
+chat.innerHTML+=`
+<div class="alert alert-primary">
+${reply}
+</div>`;
+
+input.value="";
+
+chat.scrollTop=chat.scrollHeight;
+
+}
+
+</script>
+
+{% endblock %}
